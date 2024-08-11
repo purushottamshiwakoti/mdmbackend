@@ -1,7 +1,7 @@
 import db from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GEPATCHT(req: NextRequest, params: any) {
+export async function PATCH(req: NextRequest, params: any) {
   try {
     const id = params.params.id;
     const { Update, Secure } = await req.json();
