@@ -27,3 +27,18 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+export async function GET(req: NextRequest) {
+  try {
+    const dev = await db.device.findMany({});
+
+    return NextResponse.json(
+      { message: "Fetched device successfully", dev },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Something went wrong", error },
+      { status: 500 }
+    );
+  }
+}
